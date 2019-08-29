@@ -9,6 +9,7 @@
   <title>学习markdown | ki9mu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="标题1级标题5级标题12# 1级标题##### 5级标题  无序列表1 1 2 3123* 1* 2* 3    无序列表2 1  2 3123- 1 - 2- 3    有序列表 aaaa bbbb cccc 当有序列表的顺序不一样时会自动修改，只看第一个，然后递增  12342. aaaa1. bbbb1. cccc5. 当有序列表的顺序不一样时会自动修改，只看第一个，然后递增  引用 引用&amp;">
+<meta name="keywords" content="其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习markdown">
 <meta property="og:url" content="http://yoursite.com/2019/03/23/学习markdown/index.html">
@@ -16,8 +17,9 @@
 <meta property="og:description" content="标题1级标题5级标题12# 1级标题##### 5级标题  无序列表1 1 2 3123* 1* 2* 3    无序列表2 1  2 3123- 1 - 2- 3    有序列表 aaaa bbbb cccc 当有序列表的顺序不一样时会自动修改，只看第一个，然后递增  12342. aaaa1. bbbb1. cccc5. 当有序列表的顺序不一样时会自动修改，只看第一个，然后递增  引用 引用&amp;">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://img.netbian.com/file/2018/0223/69f8d5aefbe93d9403e0e7dab77d107f.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/03/23/学习markdown/6b72cdb5/luge.jpg">
-<meta property="og:updated_time" content="2019-06-29T13:09:37.690Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/学习markdown/luge.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/学习markdown/03/23/学习markdown/luge.jpg">
+<meta property="og:updated_time" content="2019-08-29T16:20:50.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习markdown">
 <meta name="twitter:description" content="标题1级标题5级标题12# 1级标题##### 5级标题  无序列表1 1 2 3123* 1* 2* 3    无序列表2 1  2 3123- 1 - 2- 3    有序列表 aaaa bbbb cccc 当有序列表的顺序不一样时会自动修改，只看第一个，然后递增  12342. aaaa1. bbbb1. cccc5. 当有序列表的顺序不一样时会自动修改，只看第一个，然后递增  引用 引用&amp;">
@@ -210,8 +212,8 @@
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://ki9mu.github.io" target="_blank" rel="noopener">ki9mu’s blog</a><br><code>[ki9mu&#39;s blog](https://ki9mu.github.io)</code></p>
 <h3 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h3><p><img src="http://img.netbian.com/file/2018/0223/69f8d5aefbe93d9403e0e7dab77d107f.jpg" alt="miku的图片"><br><code>![miku的图片](http://img.netbian.com/file/2018/0223/69f8d5aefbe93d9403e0e7dab77d107f.jpg)</code></p>
 <p>Ps:这里如果在本地浏览的话可能看不见，但上传了是能看见的。</p>
-<h3 id="本地图片链接"><a href="#本地图片链接" class="headerlink" title="本地图片链接"></a>本地图片链接</h3><p><img src="6b72cdb5/luge.jpg" alt="鹿哥的图片"></p>
-
+<h3 id="本地图片链接"><a href="#本地图片链接" class="headerlink" title="本地图片链接"></a>本地图片链接</h3><p><img src="/2019/03/23/学习markdown/luge.jpg" alt="鹿哥的图片"></p>
+<img src="/2019/03/23/学习markdown/03/23/学习markdown/luge.jpg" title="鹿哥的图片">
 
 <p>Ps:这里有个坑，不知道为什么，插件就是装不上。<br><code>npm install hexo-asset-image --save</code><br>然后路径一直指向archives的图片，然后我将文章名(这里指:学习markdown)替换为8个字符(这里指6b72cdb5)。<br>即<code>![鹿哥的图片](学习markdown/luge.jpg)</code><br>替换为<code>![鹿哥的图片](6b72cdb5/luge.jpg)</code><br>但这样感觉实在有点麻烦，于是就用了后者</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img luge.jpg 鹿哥的图片 %&#125;</span><br></pre></td></tr></table></figure>
@@ -222,6 +224,9 @@
 <p><em>斜体<br>`</em>斜体`</p>
 <h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
 <p><code>***</code></p>
+<hr>
+<p>更新日期 2019年8月30日凌晨</p>
+<h2 id="最后说几句"><a href="#最后说几句" class="headerlink" title="最后说几句"></a>最后说几句</h2><p>这图片真的秀好吧，换了个主题，那个asset_img那个标签就凉了，整了一晚上，心累。图床是不可能图床了，这辈子都不可能图床。</p>
 
       
 
@@ -230,6 +235,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -294,11 +310,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/19/缓冲区溢溢出——shellcode编写/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/19/shellcode编写/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          缓冲区溢溢出——shellcode编写
+          shellcode编写
         
       </div>
     </a>
@@ -424,6 +440,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ctfwp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

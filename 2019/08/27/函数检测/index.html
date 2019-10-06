@@ -18,7 +18,11 @@
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/1.jpg">
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/2.jpg">
-<meta property="og:updated_time" content="2019-08-30T05:46:18.226Z">
+<meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/IsDebuggerPresent%E4%BD%8D%E7%BD%AE.jpg">
+<meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/%E8%B7%9F%E8%BF%9B%E5%87%BD%E6%95%B0%E7%BB%93%E6%9E%9C.jpg">
+<meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/%E6%9B%B4%E6%94%B9eax%E7%9A%84%E5%80%BC.jpg">
+<meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/ctrl+f9%E8%BF%90%E8%A1%8C%E5%88%B0%E8%BF%94%E5%9B%9E%E4%BD%8D%E7%BD%AE.jpg">
+<meta property="og:updated_time" content="2019-10-06T15:21:54.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数检测">
 <meta name="twitter:description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）  以下为IsDebuggerPresent()的检测代码 12345678910111213141516171819202122232425262728// ConsoleApplication1.cpp">
@@ -190,6 +194,11 @@
 <p><img src="/2019/08/27/函数检测/1.jpg" alt="正常运行结果"></p>
 <p>而调试结果如下：</p>
 <p><img src="/2019/08/27/函数检测/2.jpg" alt="调试运行结果"></p>
+<h2 id="更改结果"><a href="#更改结果" class="headerlink" title="更改结果"></a>更改结果</h2><p>此处使用的是x64dbg</p>
+<p>在符号表中找到IsDebuggerPresent位置，并下断点。<br><img src="/2019/08/27/函数检测/IsDebuggerPresent%E4%BD%8D%E7%BD%AE.jpg" alt="IsDebuggerPresent位置"></p>
+<p>开始调试，断点处停下。<br><img src="/2019/08/27/函数检测/%E8%B7%9F%E8%BF%9B%E5%87%BD%E6%95%B0%E7%BB%93%E6%9E%9C.jpg" alt="跟进函数结果"></p>
+<p>更改eax的值(此处eax的值反应的是否为调试,0为未调试，1为调试)<br><img src="/2019/08/27/函数检测/%E6%9B%B4%E6%94%B9eax%E7%9A%84%E5%80%BC.jpg" alt="更改eax的值"></p>
+<p>直接运行到返回位置，即更改后。<br><img src="/2019/08/27/函数检测/ctrl+f9%E8%BF%90%E8%A1%8C%E5%88%B0%E8%BF%94%E5%9B%9E%E4%BD%8D%E7%BD%AE.jpg" alt="ctrl+f9运行到返回位置"></p>
 
       
 
@@ -418,11 +427,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
+                <a href="javascript:void(0)" class="js-tag color4">反调试</a>
               </li>
              
               <li class="article-tag-list-item">

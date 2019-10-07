@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://ki9mu.github.io">
   <title>函数检测 | ki9mu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）  以下为IsDebuggerPresent()的检测代码 12345678910111213141516171819202122232425262728// ConsoleApplication1.cpp">
+  <meta name="description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）">
 <meta name="keywords" content="反调试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数检测">
 <meta property="og:url" content="http://ki9mu.github.io/2019/08/27/函数检测/index.html">
 <meta property="og:site_name" content="ki9mu&#39;s blog">
-<meta property="og:description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）  以下为IsDebuggerPresent()的检测代码 12345678910111213141516171819202122232425262728// ConsoleApplication1.cpp">
+<meta property="og:description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/1.jpg">
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/2.jpg">
@@ -22,10 +22,10 @@
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/%E8%B7%9F%E8%BF%9B%E5%87%BD%E6%95%B0%E7%BB%93%E6%9E%9C.jpg">
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/%E6%9B%B4%E6%94%B9eax%E7%9A%84%E5%80%BC.jpg">
 <meta property="og:image" content="http://ki9mu.github.io/2019/08/27/函数检测/ctrl+f9%E8%BF%90%E8%A1%8C%E5%88%B0%E8%BF%94%E5%9B%9E%E4%BD%8D%E7%BD%AE.jpg">
-<meta property="og:updated_time" content="2019-10-06T15:21:54.928Z">
+<meta property="og:updated_time" content="2019-10-07T12:04:26.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数检测">
-<meta name="twitter:description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）  以下为IsDebuggerPresent()的检测代码 12345678910111213141516171819202122232425262728// ConsoleApplication1.cpp">
+<meta name="twitter:description" content="windows API方法来反调试在windows中主要有2个api来检测程序是否处于调试中：  IsDebuggerPresent() CheckRemoteDebuggerPresent（）">
 <meta name="twitter:image" content="http://ki9mu.github.io/2019/08/27/函数检测/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="ki9mu&#39;s blog" type="application/atom+xml">
@@ -49,6 +49,7 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
+
     <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style="background: #4d4d4d"></div>
@@ -103,6 +104,7 @@
 </div>
 
     </div>
+
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
@@ -180,12 +182,15 @@
         
       </header>
     
+
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="windows-API方法来反调试"><a href="#windows-API方法来反调试" class="headerlink" title="windows API方法来反调试"></a>windows API方法来反调试</h2><p>在windows中主要有2个api来检测程序是否处于调试中：</p>
 <ol>
 <li>IsDebuggerPresent()</li>
-<li>CheckRemoteDebuggerPresent（）</li>
+<li>CheckRemoteDebuggerPresent（）<a id="more"></a>
+
+</li>
 </ol>
 <p>以下为IsDebuggerPresent()的检测代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// ConsoleApplication1.cpp : 定义控制台应用程序的入口点。</span><br><span class="line">// Author: ki9mu</span><br><span class="line">// Time: 2019/08/27 20:25</span><br><span class="line"></span><br><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include&lt;windows.h&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&quot;string.h&quot;</span><br><span class="line">bool function_check()</span><br><span class="line">&#123;</span><br><span class="line">	if (IsDebuggerPresent())</span><br><span class="line">	&#123;</span><br><span class="line">		//MessageBox(NULL, L&quot;调试ing&quot;, L&quot;by @ki9mu&quot;, 0);</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		//MessageBox(NULL, L&quot;雨女无瓜&quot;, L&quot;by @ki9mu&quot;, 0);</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	bool a；</span><br><span class="line">    a=function_check();</span><br><span class="line">    cout&lt;&lt;a;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -201,7 +206,8 @@
 <p>直接运行到返回位置，即更改后。<br><img src="/2019/08/27/函数检测/ctrl+f9%E8%BF%90%E8%A1%8C%E5%88%B0%E8%BF%94%E5%9B%9E%E4%BD%8D%E7%BD%AE.jpg" alt="ctrl+f9运行到返回位置"></p>
 
       
-
+    <!--my code-->
+    <!--my code ends-->
       
     </div>
     <div class="article-info article-info-index">
@@ -313,6 +319,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows-API方法来反调试"><span class="toc-number">1.</span> <span class="toc-text">windows API方法来反调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改结果"><span class="toc-number">2.</span> <span class="toc-text">更改结果</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -332,8 +351,7 @@
           </div>
         </div>
       </div>
-      <!--
-<footer id="footer">
+      <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -345,7 +363,7 @@
     </div>
   </div>
 </footer>
--->
+<!--
 <footer id="footer">
   <div class="outer">
     <div id="footer-info">
@@ -369,6 +387,7 @@
     </div>
   </div>
 </footer>
+-->
     </div>
     <script>
 	var yiliaConfig = {
@@ -452,11 +471,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
+                <a href="javascript:void(0)" class="js-tag color4">反调试</a>
               </li>
              
               <li class="article-tag-list-item">

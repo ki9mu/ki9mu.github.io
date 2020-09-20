@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 技术 | ki9mu&#39;s blog</title>
+  <title itemprop="name">正则表达式 | ki9mu&#39;s blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -342,336 +342,284 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/2.jpg);" src="/img/custom/donate/AliPayQR.jpg" data-src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/2.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      正则表达式</h1>
+      <p class="entry-census">
+        <span>
+          <a href="ki9mu.github.io">
+            <img src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.2/img/avatar/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="ki9mu.github.io">ki9mu</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-8-10<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">野生技术协会</h1>
-    <span class="cat-des">
-      <p>Geek – Only for Love</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>​        <em>有些人在碰到问题时，就想：“我知道，我可以使用正则表达式。”现在，他们就有了两个问题。</em></p>
+<p>​        测试网址：<a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></p>
+<h2 id="特殊符号与字符"><a href="#特殊符号与字符" class="headerlink" title="特殊符号与字符"></a>特殊符号与字符</h2><table>
+<thead>
+<tr>
+<th align="left">表示方法</th>
+<th align="left">描述</th>
+<th align="left">正则表达式实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">字符串</td>
+<td align="left">匹配文字本身的字符串</td>
+<td align="left">ki9mu</td>
+</tr>
+<tr>
+<td align="left">temp1|temp2</td>
+<td align="left">匹配两个字符串</td>
+<td align="left">ki9mu|newen</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">匹配任意字符</td>
+<td align="left">ki.mu</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">匹配字符串起始部分，也就是开始字符串必须为ki9mu</td>
+<td align="left">^ki9mu</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">匹配字符串终止部分，也就是结束字符串必须为ki9mu</td>
+<td align="left">ki9mu$</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">匹配0次或者多次前面出现的正则表达式，贪婪模式</td>
+<td align="left">[A-Z0-9a-z]*</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">匹配1次或者多次前面出现的正则表达式，贪婪模式</td>
+<td align="left">[A-Z0-9a-z]+\.com</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">匹配0次或者1次前面出现的正则表达式，非贪婪模式</td>
+<td align="left">ki[0-9]?mu</td>
+</tr>
+<tr>
+<td align="left">{N}</td>
+<td align="left">匹配N次前面出现的正则表达式</td>
+<td align="left">[a-z0-9]{3}mu</td>
+</tr>
+<tr>
+<td align="left">{M,N}</td>
+<td align="left">匹配从M~N次前面出现的表达式</td>
+<td align="left">[a-z0-9]{0,5}</td>
+</tr>
+<tr>
+<td align="left">[string]</td>
+<td align="left">匹配字符串中任意单一字符</td>
+<td align="left">[ki9mu]{5}</td>
+</tr>
+<tr>
+<td align="left">[x-y]</td>
+<td align="left">匹配从x到y的任意单一字符，y的ascii需要大于x</td>
+<td align="left">[k-u0-9]{5}</td>
+</tr>
+<tr>
+<td align="left">[^string]</td>
+<td align="left">不匹配字符串中任意字符</td>
+<td align="left">[^ki9mu]{5}</td>
+</tr>
+<tr>
+<td align="left">(*|+|?|{})?</td>
+<td align="left">匹配上面重复出现符号的非贪婪版本(*、+、？、{})</td>
+<td align="left">.*?[a-z]$</td>
+</tr>
+<tr>
+<td align="left">(re)</td>
+<td align="left">匹配封闭的正则表达式</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">\d</td>
+<td align="left">匹配任何十进制数字，与[0,9]相同</td>
+<td align="left">ki\dmu</td>
+</tr>
+<tr>
+<td align="left">\D</td>
+<td align="left">匹配任何非数字，与\d相反</td>
+<td align="left">\D\D9mu</td>
+</tr>
+<tr>
+<td align="left">\w</td>
+<td align="left">匹配字母数字下划线，与[A-Z0-9a-z]相同</td>
+<td align="left">ki\wmu</td>
+</tr>
+<tr>
+<td align="left">\s</td>
+<td align="left">匹配任何空格字符，与[\n\t\r\v\f]相同</td>
+<td align="left">ki9mu\sis\sgreat</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">匹配任何单词边界</td>
+<td align="left">\bki9mu\bis\bgreat\b</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>贪婪模式：尽可能多的匹配，应该尽量避免<br>非贪婪模式：尽可能少的匹配</p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ol>
+<li><p>匹配从A到B中间的(非贪婪)</p>
+<pre><code class="markdown">A.*?B</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>匹配所有html5标签</p>
+<pre><code class="markdown">&lt;[^&gt;]+&gt;</code></pre>
+</li>
+</ol>
+<h2 id="小纠结"><a href="#小纠结" class="headerlink" title="小纠结"></a>小纠结</h2><p>感觉这玩意能用就行，后续每次碰到再补充到tips里。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/08/17/冰蝎3.0beta2/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="/img/custom/donate/AliPayQR.jpg" data-src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/4.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/4.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                冰蝎3.0beta2检测</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/08/09/old/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="/img/custom/donate/AliPayQR.jpg" data-src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.3/img/article/1.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.3/img/article/1.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                以前的归档</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/09/15/CVE-2020-1472/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="ki9mu.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.2/img/avatar/avatar.jpg" itemprop="image" alt="ki9mu" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="ki9mu.github.io" itemprop="url" rel="author">ki9mu</a>
+            </h3>
+          </div>
         </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/7.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/09/15/CVE-2020-1472/">
-    CVE-2020-1472漏洞分析</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-9-15</div>
-    <p>
-    CVE-2020-1472漏洞分析</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/09/15/CVE-2020-1472/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/20/深信服EDR/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/3.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/20/深信服EDR/">
-    深信服EDR漏洞</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-20</div>
-    <p>
-    深信服EDR源码泄露，而且代码十分垃圾，爆出多个0day</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/20/深信服EDR/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/17/冰蝎3.0beta2/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/4.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/17/冰蝎3.0beta2/">
-    冰蝎3.0beta2检测</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-17</div>
-    <p>
-    suricata检测冰蝎3.0beta2</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/17/冰蝎3.0beta2/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/10/正则表达式/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/10/正则表达式/">
-    正则表达式</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-10</div>
-    <p>
-    正则表达式的学习</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/10/正则表达式/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/09/15/CVE-2020-1472/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/7.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/09/15/CVE-2020-1472/">
-    CVE-2020-1472漏洞分析</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-9-15</div>
-    <p>
-    CVE-2020-1472漏洞分析</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/09/15/CVE-2020-1472/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/20/深信服EDR/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/3.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/20/深信服EDR/">
-    深信服EDR漏洞</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-20</div>
-    <p>
-    深信服EDR源码泄露，而且代码十分垃圾，爆出多个0day</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/20/深信服EDR/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/17/冰蝎3.0beta2/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/4.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/17/冰蝎3.0beta2/">
-    冰蝎3.0beta2检测</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-17</div>
-    <p>
-    suricata检测冰蝎3.0beta2</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/17/冰蝎3.0beta2/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/10/正则表达式/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.4/img/article/2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/10/正则表达式/">
-    正则表达式</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-10</div>
-    <p>
-    正则表达式的学习</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/10/正则表达式/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/08/09/old/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/ki9mu/cdn@1.3/img/article/1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/08/09/old/">
-    以前的归档</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-8-9</div>
-    <p>
-    以前写的博客</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/08/09/old/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

